@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>photomosaic.js</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h3>photomosaic.js</h3>
+    <div class="block">
+        <img src="./han.jpg" id='image' alt="" width="600" height="600">
+    </div>
+    <div class="block">
+        <div id='target'></div>
+    </div>
+    <div class="block" >
+        <img id='resultImage' alt="" width="600" height="600">
+    </div>
+</body>
+<script src='./photomosaic.js'></script>
+<script>
+var photomosaic = new PhotoMosaic({
+    image: document.getElementById('image'),
+    targetElement: document.getElementById('target'),
+    width: 600,
+    height: 600,
+    tileWidth: 5,
+    tileHeight: 5
+})
+</script>
+
+</html>

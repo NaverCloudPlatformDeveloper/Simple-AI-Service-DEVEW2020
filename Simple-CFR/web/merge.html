@@ -1,0 +1,37 @@
+<canvas id="mergeCanvas" width="600" height="600"></canvas>
+
+<script>
+
+var canvas = document.getElementById("mergeCanvas");
+var ctx = canvas.getContext("2d");
+//First canvas data
+var img1 = loadImage('http://localhost:80/han.jpg', main);
+//Second canvas data
+var img2 = loadImage('http://localhost:80/mosaic.jpg', main);
+
+var imagesLoaded = 0;
+
+function main() {
+	imagesLoaded += 1;
+
+	if (imagesLoaded == 2) {
+        // composite now
+        ctx.globalAlpha = 0.5;
+    	ctx.drawImage(img1, 0, 0);
+
+    	ctx.globalAlpha = 1;
+    	ctx.drawImage(img2, 0, 0);
+	}
+}
+
+function loadImage(src, onload) {
+    console.log('loadImage', src);
+    var img = new Image();
+
+	img.onload = onload;
+	img.src = src;
+
+	return img;
+}
+
+</script>
